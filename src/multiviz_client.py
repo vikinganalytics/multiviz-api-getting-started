@@ -1,7 +1,7 @@
 import json
 
 import requests
-from logger import logging
+from src.logger import logging
 from requests.exceptions import HTTPError, RequestException
 
 logger = logging.getLogger(__name__)
@@ -155,9 +155,18 @@ class MultivizClient:
         if ignore_existing:
             ignore_http_statuses = [409]
 
-        return self._request(
-            "POST", endpoint, payload=payload, ignore_http_statuses=ignore_http_statuses
-        )
+        try:
+            return self._request(
+                "POST", endpoint, payload=payload
+            )
+        except HTTPError as exc:
+            if exc.response.status_code == 409 and ignore_existing:
+                logger.info(
+                    f"Source with external_id '{payload.get('external_id')}' already exists. Ignoring as per flag."
+                )
+                return self.get_source_by_external_id(payload.get("external_id"))
+            else:
+                raise
 
     def get_source(self, source_id):
         """
@@ -180,6 +189,29 @@ class MultivizClient:
         """
         endpoint = f"/sources/{source_id}"
         return self._request("GET", endpoint)
+    
+    def get_source_by_external_id(self, external_id):
+        """
+        Retrieves the meta information of the source with external_id.
+
+        Parameters
+        ----------
+        external_id : str
+            The external ID of the source.
+
+        Returns
+        -------
+        dict
+            JSON response from the API containing the source details.
+
+        Raises
+        ------
+        HTTPError
+            If the HTTP request returned an unsuccessful status code.
+        """
+        endpoint = f"/sources/external_id/{external_id}"
+        return self._request("GET", endpoint)
+
 
     def update_source(self, source_id, payload):
         """
