@@ -1,0 +1,16 @@
+Snapshot Id     : 202804
+Recorded At     : 10/22/2025 00:58:37
+Recorded by User: Unknown
+Device Name        : UT-CMP-201
+Device Serial      : VW8AQ5A840
+Machine Name       : cylinder
+Sensor Serial      : 1890727266
+Sensor Name        : Sensor 1890727266
+Samples            : 8192
+Time Period        : 640ms
+Sensor Position    : 1
+Axis               : All
+Freq Max           : 5000
+FFT Res            : 1.563
+Avg. Number        : 1
+Slice/Bin Duration : 0ms
