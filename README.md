@@ -202,3 +202,4 @@ If anything is unclear or you want the README adapted for internal documentation
 Or always get the newest version:
 
 [⭐ Latest release](https://github.com/vikinganalytics/multiviz-connector-template/releases/latest)
+
