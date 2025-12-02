@@ -151,10 +151,6 @@ class MultivizClient:
         """
         endpoint = "/sources/"
 
-        ignore_http_statuses = None
-        if ignore_existing:
-            ignore_http_statuses = [409]
-
         try:
             return self._request(
                 "POST", endpoint, payload=payload
