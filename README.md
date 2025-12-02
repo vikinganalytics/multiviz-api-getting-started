@@ -196,7 +196,7 @@ If anything is unclear or you want the README adapted for internal documentation
 
 ## 📦 Download
 
-[📥 Download ZIP (v1.0.0)](https://github.com/vikinganalytics/multiviz-api-getting-started/releases/download/v1.0.0/multiviz-api-getting-started-v1.0.1.zip)
+[📥 Download ZIP (v1.0.1)](https://github.com/vikinganalytics/multiviz-api-getting-started/releases/download/v1.0.0/multiviz-api-getting-started-v1.0.1.zip)
 
 Or always get the newest version:
 
