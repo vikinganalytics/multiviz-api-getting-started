@@ -1,4 +1,4 @@
-# Vibium / MultiViz Time Waveform Upload Example
+# MultiViz Time Waveform Upload Example
 
 This repository contains a small Python project and a Jupyter notebook showing how to upload **time waveform vibration data** to **MultiViz** using the `MultivizClient`.  
 The notebook demonstrates working with both **JSON payloads** and **CSV files**.
@@ -16,12 +16,11 @@ The notebook demonstrates working with both **JSON payloads** and **CSV files**.
 │   ├── values_2.csv           # Y-axis data
 │   └── values_3.csv           # Z-axis data
 ├── notebooks/
-│   └── upload_to_vibium.ipynb # Main demonstration notebook
+│   └── upload_to_multiviz.ipynb # Main demonstration notebook
 ├── src/
 │   ├── helper.py              # Helper functions (I/O, parsing, utils)
 │   ├── logger.py              # Basic logger
 │   ├── multiviz_client.py     # MultiViz communication layer
-│   └── vibium_client.py
 ├── requirements.txt
 └── README.md
 ```
@@ -65,7 +64,7 @@ pip install jupyterlab
 Open the notebook:
 
 ```
-notebooks/upload_to_vibium.ipynb
+notebooks/upload_to_multiviz.ipynb
 ```
 
 Set your API key in the first code cell:
@@ -88,7 +87,7 @@ jupyter lab
 Then open:
 
 ```
-notebooks/upload_to_vibium.ipynb
+notebooks/upload_to_multiviz.ipynb
 ```
 
 Run all cells from top to bottom.
