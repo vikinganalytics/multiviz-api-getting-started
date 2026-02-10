@@ -415,3 +415,7 @@ class MultivizClient:
         """
         endpoint = f"/sources/{source_id}/measurements/{timestamp}"
         return self._request("DELETE", endpoint)
+    
+    def exec_trigger(self, source_id):
+        path = f"/pipeline/triggers/sources/{source_id}/new_measurement"
+        return self._request("PUT", path)
